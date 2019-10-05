@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-DB design
+## DB design
 
 users table
 |Column|Type|Options|
@@ -32,7 +32,7 @@ users table
 |mail|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 
-Association
+### Association
 - has_many :groups, through: :users_groups
 - has_many :groups
 - has_many :comments
