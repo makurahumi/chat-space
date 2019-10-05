@@ -50,10 +50,20 @@ Things you may want to cover:
 ## groups table
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, unique: true|
+|group_name|text|null: false, unique: true|
 
 ### Association
 - has_many :users, through: :user_groups
 - has_many :users_groups
 - has_many :comments, through: groups_comments
 - has_many :groups_comments
+
+## groups_comments table
+|Column|Type|Options|
+|------|----|-------|
+|group_id|integer|null: false, foreign_key: true|
+|comment_id|integer|null: false, foreign_key: true|
+
+### Asociation
+- belongs_to :group
+- belongs_to :comment
