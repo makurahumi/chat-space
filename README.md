@@ -67,3 +67,15 @@ Things you may want to cover:
 ### Asociation
 - belongs_to :group
 - belongs_to :comment
+
+## comments table
+|Column|Type|Option|
+|------|----|------|
+|comment|text|null: false|
+|image|string||
+|user_id|integer|null: false, foreign_key: true|
+
+### Asociation
+- has_many :groups, through: groups_comments
+- has_many :groups_comments
+- belongs_to :user
