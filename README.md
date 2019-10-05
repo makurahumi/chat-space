@@ -34,7 +34,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :groups, through: :users_groups
-- has_many :groups
+- has_many :users_groups
 - has_many :comments
 
 ## users_groups table
@@ -46,3 +46,14 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+## groups table
+|Column|Type|Options|
+|------|----|-------|
+|group_name|string|null: false, unique: true|
+
+### Association
+- has_many :users, through: :user_groups
+- has_many :users_groups
+- has_many :comments, through: groups_comments
+- has_many :groups_comments
