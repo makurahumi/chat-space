@@ -22,3 +22,17 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+DB design
+
+users table
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|mail|string|null: false, unique: true|
+|password|string|null: false, unique: true|
+
+Association
+- has_many :groups, through: :users_groups
+- has_many :groups
+- has_many :comments
