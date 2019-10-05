@@ -40,7 +40,7 @@ Things you may want to cover:
 ## users_groups table
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true, add_index :user_groups, :user_id|
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -61,7 +61,7 @@ Things you may want to cover:
 ## groups_comments table
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true, add_index :groups_comments, :group_id|
 |comment_id|integer|null: false, foreign_key: true|
 
 ### Asociation
@@ -73,7 +73,7 @@ Things you may want to cover:
 |------|----|------|
 |comment|text|null: false|
 |image|string||
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true, add_index :commets, :user_id|
 
 ### Asociation
 - has_many :groups, through: groups_comments
