@@ -23,9 +23,9 @@ Things you may want to cover:
 
 * ...
 
-## DB design
+# DB design
 
-users table
+## users table
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
