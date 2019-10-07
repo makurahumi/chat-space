@@ -28,7 +28,7 @@ Things you may want to cover:
 ## users table
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique: true|
+|name|string|null: false, unique: true, add_index :users, :name|
 |mail|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 
@@ -40,7 +40,7 @@ Things you may want to cover:
 ## users_groups table
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true, add_index :user_groups, :user_id|
+|user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -55,27 +55,16 @@ Things you may want to cover:
 ### Association
 - has_many :users, through: :user_groups
 - has_many :users_groups
-- has_many :comments, through: groups_comments
-- has_many :groups_comments
-
-## groups_comments table
-|Column|Type|Options|
-|------|----|-------|
-|group_id|integer|null: false, foreign_key: true, add_index :groups_comments, :group_id|
-|comment_id|integer|null: false, foreign_key: true|
-
-### Asociation
-- belongs_to :group
-- belongs_to :comment
+- has_many :comments
 
 ## comments table
 |Column|Type|Option|
 |------|----|------|
 |comment|text|null: false|
 |image|string||
-|user_id|integer|null: false, foreign_key: true, add_index :commets, :user_id|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, fpreign_key: true|
 
 ### Asociation
-- has_many :groups, through: groups_comments
-- has_many :groups_comments
+- belongs_to :group
 - belongs_to :user
