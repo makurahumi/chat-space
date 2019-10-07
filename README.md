@@ -50,7 +50,7 @@ Things you may want to cover:
 ## groups table
 |Column|Type|Options|
 |------|----|-------|
-|group_name|text|null: false, unique: true|
+|name|string|null: false, unique: true|
 
 ### Association
 - has_many :users, through: :user_groups
@@ -60,7 +60,7 @@ Things you may want to cover:
 ## comments table
 |Column|Type|Option|
 |------|----|------|
-|comment|text|null: false|
+|comment|text||
 |image|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, fpreign_key: true|
