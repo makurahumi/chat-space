@@ -10,15 +10,39 @@
 .left-contents{
   height: 100vh;
   width: 300px;
+  float: left;
   background-color: $sidebarCorlor;
-  &__property {
+}
+
+  .property {
     height: 72px;
     width: 300px;
-    font-size: 16px;
-    color: $mainWhiteColor;
     background-color: #253141;
+    &__detile {
+      line-height: 72px;
+      font-size: 16px;
+      padding: 0 20px 0 20px;
+      @include white();
+    }
+  }
+
+.caption {
+  height: 106px;
+  width: 300px;
+  @include white();
+  background-color: $mainDarkColor;
+  &__title {
+    font-size:15px;
+    @include caption();
+  }
+  &__title__text {
+    font-size: 11px;
+    padding: 0 20px 40px 20px;
   }
 }
 
+.right-contents {
+  float: right;
+}
 
 
