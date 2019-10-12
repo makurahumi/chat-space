@@ -15,7 +15,50 @@
   background-color: white;
 }
 
+.property {
+  height: 100px;
+  background-color: #253141;
+  display: flex;
+  align-items: center;
+  @include sub-side();
+  &__box {
+    width: 100%;
+    display: flex;
+    line-height: 100px;
+    justify-content: space-between;
+    font-size: 16px;
+    @include white();
+  }
+  &__box__menu {
+    display: flex;
+  }
+  &__box__menu--create-groups {
+    margin-left: 0.3rem;
+  }
+  &__box__menu--edit-users {
+    margin-left: 0.3rem;
+  } 
+  &__btn--create-groups {
+    color: $mainWhiteColor;
+  }
+  &__btn--edit-users {
+    color: $mainWhiteColor;
+  }
+}
 
+.caption {
+  height: 106px;
+  width: 300px;
+  @include white();
+  background-color: $mainDarkColor;
+  &__title {
+    font-size:15px;
+  }
+  &__title__text {
+    font-size: 11px;
+    padding: 0 20px 40px 20px;
+  }
+}
 
 .main-menu{
   width: calc(100vw - 300px);

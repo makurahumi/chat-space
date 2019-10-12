@@ -13,6 +13,6 @@ $sidebarCorlor: #2f3e51;
   font-weight: $fWeight;
 }
 
-@mixin sub-side($padding: 0 20px 0 20px){
-  padding: 0 20px 0 20px;
+@mixin sub-side($padding: 0 20px){
+  padding: 0 20px;
 }
