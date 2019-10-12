@@ -1,15 +1,9 @@
 .header
   =render "hader"
+
 .contents
   .sub-menu
-    .property
-      .property__box
-        %p makurahumi
-        %ul
-          %li<>
-            =link_to class:  "property__btn property__btn--new-group"
-          %li<>
-            =link_to class: "property__btn property__btn--user-edit"
+    =render "property"
     .caption
       =link_to 
       .caption__group-name

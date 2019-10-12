@@ -8,3 +8,14 @@
     text-align: center;
   }
 }
+
+.sub-menu{
+  width: 300px;
+  float: left;
+  background-color: white;
+}
+
+.main-menu{
+  width: calc(100vw - 300px);
+  float: left;
+}
