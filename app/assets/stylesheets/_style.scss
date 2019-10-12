@@ -68,3 +68,9 @@
   width: calc(100vw - 300px);
   float: left;
 }
+
+.group-home {
+  height: 100px;
+  width: calc(100vh - 300px);
+  @include main-side();
+}

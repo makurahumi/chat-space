@@ -1,0 +1,12 @@
+.group-home
+  .group-hame__detail
+    .group-home__detail__title
+      %h2{:class => "group-home__detail__title--current-group"}
+        test-space
+      %ul{:class => "group-home__detail__menber--caption"}
+        Menber: 
+      %li{:class => "group-home__detail__menber--list"}
+        makurahumi
+    .group-home__button--edit 
+      =link_to class: "group__btn group__btn--new"
+      %input{:type => "sbumit", :value => "Edit"}

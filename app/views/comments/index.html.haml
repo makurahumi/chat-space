@@ -7,14 +7,7 @@
     =render "caption"
   
   .main-menu
-    .group-home
-      .group-home__title
-        test-space
-      .group-home__button--edit 
-        =link_to class: "group__btn group__btn--new"
-        %input{:type => "sbumit", :value => "Edit"}
-      .group-home__member
-        Menber : makurahumi
+    =render "group-home"
     .comment-space
       .comment-space__menber-name
         makurahumi
