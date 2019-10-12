@@ -48,17 +48,19 @@
 
 .caption {
   height: calc(100vh - 100px);
-  width: 300px;
   background-color: $side-barCorlor;
-  &__caption__group {
+  padding: 20px 20px 0;
+  @include overflow();
+  &__group{
+    margin-bottom: 40px;
     @include white();
   }
-  &__group-name {
+  &__group--name {
     font-size:15px;
+    padding: 0 0 5px 0;
   }
-  &__group-text {
+  &__group--comment {
     font-size: 11px;
-    padding: 0 20px 40px 20px;
   }
 }
 

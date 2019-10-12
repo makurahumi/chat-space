@@ -16,3 +16,7 @@ $side-barCorlor: #2f3e51;
 @mixin sub-side($padding: 0 20px){
   padding: 0 20px;
 }
+
+@mixin overflow($overflow-x: scroll, $overflow-y: scroll){
+  overflow: scroll;
+}
