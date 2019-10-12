@@ -2,7 +2,9 @@
   .property__box
     %p{:class => "property__box__users-name"}makurahumi
     %ul{:class => "property__box__menu"}
-      %li{:class => "property__box__menu--create-group"}
-        =link_to class:  "property__btn property__btn--new-group"
-      %li<>
-        =link_to class: "property__btn property__btn--user-edit"
+      %li{:class => "property__box__menu--create-groups"}
+        =link_to "/" do
+          =fa_icon 'edit'
+      %li{:class => "property__box__menu--edit-users"}
+        =link_to "/" do
+          =fa_icon 'cog'
