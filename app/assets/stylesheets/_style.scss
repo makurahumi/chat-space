@@ -47,14 +47,16 @@
 }
 
 .caption {
-  height: 106px;
+  height: calc(100vh - 100px);
   width: 300px;
-  @include white();
-  background-color: $mainDarkColor;
-  &__title {
+  background-color: $side-barCorlor;
+  &__caption__group {
+    @include white();
+  }
+  &__group-name {
     font-size:15px;
   }
-  &__title__text {
+  &__group-text {
     font-size: 11px;
     padding: 0 20px 40px 20px;
   }
