@@ -1,1 +1,39 @@
-hello!
+.header
+  =render "hader"
+.contents
+  .sub-menu
+    .property
+      .property__box
+        %p makurahumi
+        %ul
+          %li<>
+            =link_to class:  "property__btn property__btn--new-group"
+          %li<>
+            =link_to class: "property__btn property__btn--user-edit"
+    .caption
+      =link_to 
+      .caption__group-name
+        test-space
+      .caption__group-comment
+        test
+  
+  .main-menu
+    .group-home
+      .group-home__title
+        test-space
+      .group-home__button--edit 
+        =link_to class: "group__btn group__btn--new"
+        %input{:type => "sbumit", :value => "Edit"}
+      .group-home__member
+        Menber : makurahumi
+    .comment-space
+      .comment-space__menber-name
+        makurahumi
+        .comment-space__date
+          2019/10/11(Fri) 12:00:00
+      .comment-space__text
+        test
+    .send-space
+      .send-space__form
+        %input{:placeholder => "type a comment"}
+        %input{:type => "sbumit", :value => "SEND"}
