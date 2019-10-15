@@ -1,10 +1,10 @@
 .header {
-  height: 30px;
+  height: 25px;
   width: 100%;
   background-color: $mainBlueCorlor;
   &__logo {
     color: $mainWhiteColor;
-    line-height: 30px;
+    line-height: 25px;
     text-align: center;
   }
 }
@@ -50,7 +50,7 @@
   height: calc(100vh - 100px);
   background-color: $side-barCorlor;
   padding: 20px 20px 0;
-  @include overflow();
+  overflow: scroll;
   &__group{
     margin-bottom: 40px;
     @include white();
@@ -86,7 +86,7 @@
   &__detail__menber--caption {
     display: flex;
     font-size: 12px;
-    color: #999999
+    color: $mainGrayColor;
   }
   &__btn--edit{
     height: 40px;
@@ -102,3 +102,34 @@
   color: $mainBlueCorlor;
   text-decoration: none;
   }
+
+.comment {
+  height: calc(100vh - 190px);
+  overflow: scroll;
+  background-color: #fafafa;
+  padding: 46px 40px;
+}
+
+.comment-space {
+  padding-bottom: 40px;
+  &__detail {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  &__space--menber-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: $mainDarkColor;
+  }
+  &__detail--date {
+    font-size: 12px;
+    margin-left: 10px;
+    color: $mainGrayColor;
+  }
+} 
+
+.comment__text {
+  font-size: 14px;
+  color: $mainDarkColor;
+  padding-bottom: 10px;
+}
