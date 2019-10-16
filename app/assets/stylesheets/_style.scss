@@ -108,6 +108,11 @@
   overflow: scroll;
   background-color: #fafafa;
   padding: 46px 40px;
+  &__text {
+    font-size: 14px;
+    color: $mainDarkColor;
+    padding-bottom: 10px;
+  }
 }
 
 .comment-space {
@@ -128,8 +133,29 @@
   }
 } 
 
-.comment__text {
-  font-size: 14px;
-  color: $mainDarkColor;
-  padding-bottom: 10px;
+.send {
+  height: 50px;
+  padding: 20px 40px;
+  background-color: $mainGrayColor;
+}
+
+.send-space{
+  display: flex;
+}
+
+.input-box{
+  width: 100%;
+  &__text {
+    height: 50px;
+    width: 100%;
+  }
+}
+
+.submit-btn {
+  height: 50px;
+  width: 100px;
+  margin-left: 15px;
+  cursor: pointer;
+  color: $mainWhiteColor;
+  background-color: $mainBlueCorlor;
 }
