@@ -1,5 +1,9 @@
+*{
+  box-sizing: border-box;
+}
+
 .header {
-  height: 25px;
+  height: 30px;
   width: 100%;
   background-color: $mainBlueCorlor;
   &__logo {
@@ -91,12 +95,13 @@
   &__btn--edit{
     height: 40px;
     line-height: 40px;
-    padding: 0 20px 0 20px;
+    padding: 0 20px;
     margin-top: 28px;
     border: solid 1px $mainBlueCorlor;
+    position: absolute;
+    right: 40px;
   }
 }
-
 
 .group-home a {
   color: $mainBlueCorlor;
@@ -105,9 +110,9 @@
 
 .comment {
   height: calc(100vh - 190px);
-  overflow: scroll;
-  background-color: #fafafa;
   padding: 46px 40px;
+  background-color: #fafafa;
+  overflow: scroll;
   &__text {
     font-size: 14px;
     color: $mainDarkColor;
@@ -134,28 +139,47 @@
 } 
 
 .send {
-  height: 50px;
+  height: 90px;
   padding: 20px 40px;
   background-color: $mainGrayColor;
-}
-
-.send-space{
-  display: flex;
+  &__space{
+    display: flex;
+  }
 }
 
 .input-box{
   width: 100%;
+  position: relative;
   &__text {
     height: 50px;
     width: 100%;
+    padding: 0 40px 0 10px;
+    color: #434a54;
+    border-style: none;
+  }
+  &__image {
+    font-size: 1.3rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    &--file {
+      display: none;
+    }
   }
 }
+
 
 .submit-btn {
   height: 50px;
   width: 100px;
   margin-left: 15px;
-  cursor: pointer;
+  padding: 0 30px;
   color: $mainWhiteColor;
   background-color: $mainBlueCorlor;
+  cursor: pointer;
+}
+
+.input::placeholder{
+  font-size: 16px;
 }

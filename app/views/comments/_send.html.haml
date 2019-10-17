@@ -1,8 +1,10 @@
 .send
-  %form{:class => "send-space", :action => "", :method => "post"}
-    .input-box
-      %input{:class => "input-box__text", :type => "text", :name => "comment-text", :placeholder => "type a comment"}
-      %label{:class => "input-box__image"}
-        %input{:class => "input-box__image--file", :type => "file"}
-    %input{:class => "submit-btn", :type => "submit", :name => "send-btn", :value => "Send"}
+  %form{:class => "send__space", :action => "", :method => "post"}
+    =form_for "" do |f|
+      .input-box
+        %input{:placeholder => "type a comment", :class => "input-box__text", :type => "text", :name => "comment-text"}
+        %label.input-box__image{for: "upload-icon"}
+          %i.fa.fa-image
+            =f.file_field :image, class: "input-box__image--file", id: "upload-icon"
+      %input{:class => "submit-btn", :type => "submit", :name => "send-btn", :value => "Send"}
  
