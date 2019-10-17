@@ -21,6 +21,11 @@ $side-barCorlor: #2f3e51;
   padding: 0 40px;
 }
 
+@mixin display-justify($display: flex, $justify-content: space-between){
+  display: $display;
+  justify-content: $justify-content;
+}
+
 @mixin border($border-bottom: solid, $border-width: 1px, $border-color: #eeeeee,){
   border-bottom: solid;
   border-width: 1px;
