@@ -1,0 +1,29 @@
+.comment {
+  height: calc(100vh - 190px);
+  padding: 46px 40px;
+  overflow: scroll;
+  background-color: #fafafa;
+  &__text {
+    font-size: 14px;
+    padding-bottom: 10px;
+    color: $mainDarkColor;
+  }
+}
+
+.comment-space {
+  padding-bottom: 40px;
+  &__detail {
+    display: flex;
+    margin-bottom: 10px;
+    &--date {
+      font-size: 12px;
+      margin-left: 10px;
+      color: $mainGrayColor;
+    }
+  }
+  &__space--menber-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: $mainDarkColor;
+  }
+} 

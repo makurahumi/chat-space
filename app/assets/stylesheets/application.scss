@@ -1,4 +1,5 @@
 @import "./reset";
-@import "./configs/variable";
-@import "./style";
 @import "./font-awesome";
+@import "./configs/variable";
+@import "./mixins/index-mixin";
+@import "./style";
