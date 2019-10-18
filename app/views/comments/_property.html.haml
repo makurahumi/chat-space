@@ -1,10 +1,10 @@
 .property
   .property__box
-    %p{:class => "property__box__users-name"}makurahumi
-    %ul{:class => "property__box__menu"}
-      %li{:class => "property__box__menu--create-groups"}
+    %p.property__box__users-name makurahumi
+    %ul.property__box__menu
+      %li.property__box__menu--create-groups
         =link_to "/", class: "property__btn--create-groups" do
           =fa_icon 'edit'
-      %li{:class => "property__box__menu--edit-users"}
+      %li.property__box__menu--edit-users
         =link_to "/", class: "property__btn--edit-users" do
           =fa_icon 'cog'
