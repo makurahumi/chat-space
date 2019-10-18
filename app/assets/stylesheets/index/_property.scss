@@ -1,0 +1,29 @@
+.property {
+  height: 100px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  background-color: #253141;
+  &__box {
+    width: 100%;
+    line-height: 100px;
+    font-size: 16px;
+    @include display-justify();
+    @include white();
+  }
+  &__box__menu {
+    display: flex;
+  }
+  &__box__menu--create-groups {
+    margin-left: 0.3rem;
+  }
+  &__box__menu--edit-users {
+    margin-left: 0.3rem;
+  } 
+  &__btn--create-groups {
+    color: $mainWhiteColor;
+  }
+  &__btn--edit-users {
+    color: $mainWhiteColor;
+  }
+}

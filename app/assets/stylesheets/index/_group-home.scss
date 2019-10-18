@@ -1,0 +1,33 @@
+.group-home {
+  height: 100px;
+  padding: 0 40px;
+  border-bottom: solid 1px #eee;
+  @include display-justify();
+  &__detail {
+    margin-top: 35px;
+  }
+  &__detail--current-group {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333333;
+  }
+  &__detail__menber--caption {
+    font-size: 12px;
+    display: flex;
+    color: $mainGrayColor;
+  }
+  &__btn--edit{
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin-top: 28px;
+    border: solid 1px $mainBlueCorlor;
+    position: absolute;
+    right: 40px;
+  }
+}
+
+.group-home a {
+  text-decoration: none;
+  color: $mainBlueCorlor;
+  }

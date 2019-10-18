@@ -1,0 +1,9 @@
+@mixin white($color: #FFFFFF, $fWeight: bold){
+  color: $color;
+  font-weight: $fWeight;
+}
+
+@mixin display-justify($display: flex, $justify-content: space-between){
+  display: $display;
+  justify-content: $justify-content;
+}

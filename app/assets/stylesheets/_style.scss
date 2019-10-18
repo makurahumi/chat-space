@@ -1,0 +1,24 @@
+*{
+  box-sizing: border-box;
+}
+
+@import "./index/header";
+
+.sub-menu{
+  width: 300px;
+  float: left;
+  background-color: white;
+}
+
+@import "./index/property";
+@import "./index/caption";
+
+.main-menu{
+  width: calc(100vw - 300px);
+  float: left;
+}
+
+@import "./index/group-home";
+@import "./index/comment";
+@import "./index/send";
+
