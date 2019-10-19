@@ -1,7 +1,7 @@
 .send {
   height: 90px;
   padding: 20px 40px;
-  background-color: #ddd;
+  background-color: $send-back;
   &__space{
     display: flex;
   }
@@ -15,7 +15,7 @@
     width: 100%;
     padding: 0 40px 0 10px;
     border-style: none;
-    color: #434a54;
+    color: $main-dark;
   }
   &__image {
     font-size: 1.3rem;
@@ -31,7 +31,7 @@
 
 input::placeholder{
   font-size: 16px;
-  color: $mainDarkColor;
+  color: $main-dark;
 }
 
 .submit-btn {
@@ -39,7 +39,7 @@ input::placeholder{
   width: 100px;
   margin-left: 15px;
   padding: 0 30px;
-  color: $mainWhiteColor;
-  background-color: $mainBlueCorlor;
+  color: $all-white;
+  background-color: $light_blue;
   cursor: pointer;
 }

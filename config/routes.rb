@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root to:  'comments#index'
+  devise_for :users
+  root 'comments#index'
+  resources :users, only: [:edit, :update]
 end
