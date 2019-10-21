@@ -1,6 +1,6 @@
 .captions
   - current_user.groups.each do |group|
-    = link_to "#" do
+    = link_to group_comments_path(group) do
       .caption
         %p.caption__name
           = group.name
