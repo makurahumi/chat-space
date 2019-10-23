@@ -1,10 +1,9 @@
 .send
-  %form.send__space{action: "", method: "post"}
-    =form_for "" do |f|
-      .input-box
-        %input.input-box__text{placeholder: "type a comment", type: "text", name: "comment-text"}
-        %label.input-box__image{for: "upload-icon"}
-          %i.fa.fa-image
-            =f.file_field :image, class: "input-box__image--file", id: "upload-icon"
-      %input.submit-btn{type: "submit", name: "send-btn", value: "Send"}
+  = form_for [@group, @comment] do |f|
+    = f.text_field :comment, class: "send__text", placeholder: "type a comment"
+    .input-box
+      = f.label :image, class: "input-box__image" do
+        = fa_icon "picture-o", class: "icon"
+        = f.file_field :image, class: "input-box__image--file"
+    = f.submit "Send", class: "submit-btn"
  

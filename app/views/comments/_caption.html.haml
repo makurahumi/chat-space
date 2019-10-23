@@ -2,7 +2,7 @@
   - current_user.groups.each do |group|
     .caption
       = link_to group_comments_path(group) do
-        .caption__name
+        %p.caption__name
           = group.name
-        .caption__comment
+        %p.caption__comment
           メッセージはまだありません。
