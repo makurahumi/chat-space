@@ -1,13 +1,13 @@
 class CommentsController < ApplicationController
   before_action :set_group
 
-  def inedx
+  def index
     @comment = Comment.new
     @comments = @group.comments.includes(:user)
   end
 
   def create
-    @comment = @group.comments.new(comments_params)
+    @comment = @group.comments.new(comment_params)
     if @comment.save
       redirect_to group_comments_path(@group), notice: "コメントが送信されました"
     else
@@ -18,11 +18,11 @@ class CommentsController < ApplicationController
   end
 
   private
-    def comments_params
-      params.require(:comment).permit(:comment, :image).merge(user_id: current_user.id)
-    end
+  def comment_params
+    params.require(:comment).permit(:comment, :image).merge(user_id: current_user.id)
+  end
 
-    def set_group
-      @group = Group.find(params[:group_id])
-    end
+  def set_group
+    @group = Group.find(params[:group_id])
+  end
 end

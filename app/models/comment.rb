@@ -4,5 +4,5 @@ class Comment < ApplicationRecord
 
   validates :comment, presence: true, unless: :image?
   
-  mounnt_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
 end
