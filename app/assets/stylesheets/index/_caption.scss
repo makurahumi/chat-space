@@ -1,20 +1,20 @@
-.caption {
+.captions {
   height: calc(100vh - 100px);
   padding: 20px 20px 0;
   overflow: scroll;
   background-color: $side-bar;
-  &__group{
-    margin-bottom: 40px;
-    &--link {
+}
+
+.caption {
+  margin-bottom: 40px;
+  text-decoration: none;
+  &__name {
     @include white();
-    text-decoration: none;
-    }
-  }
-  &__group--name {
     font-size:15px;
     padding: 0 0 5px 0;
   }
-  &__group--comment {
+  &__comment {
     font-size: 11px;
+    @include white();
   }
 }

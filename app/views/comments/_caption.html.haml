@@ -1,8 +1,8 @@
-.caption
-  .caption__group
-    - current_user.groups.each do |group|
-      =link_to "/", class: "caption__group--link" do
-        .caption__group--name
+.captions
+  - current_user.groups.each do |group|
+    .caption
+      = link_to group_comments_path(group) do
+        .caption__name
           = group.name
-        .caption__group--comment
+        .caption__comment
           メッセージはまだありません。
