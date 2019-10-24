@@ -5,5 +5,6 @@
   
   .main-menu
     =render partial: "comments/group-home"
-    =render partial: "comments/comment"
+    .comment
+      =render @comments
     =render partial: "comments/send"
