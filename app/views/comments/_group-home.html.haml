@@ -1,9 +1,11 @@
 .group-home
   .group-home__detail
-    %h2.group-home__detail--current-group test-space
+    %h2.group-home__detail--current-group
+      = @group.name
     %ul.group-home__detail__menber--caption
-      Menber:
+      Menber :
       %li.group-home__detail__menber--list
-        makurahumi
+        - @group.users.each do |user|
+          = user.name
   =link_to "/groups/1/edit", class: "group-home__btn--edit" do
     Edit
