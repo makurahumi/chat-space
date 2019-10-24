@@ -1,6 +1,11 @@
-.comment
-  .comment-space
-    .comment-space__detail
-      %p.comment-space__detail--menber-name makurahumi
-      %p.comment-space__detail--date 2019/10/11(Fri) 12:00:00
-    %p.comment__text test
+.comments-space
+  .comments-space__detail
+    .comments-space__detail--menber-name
+      =comment.user.name
+    .comments-space__detail--date
+      =comment.created_at.strftime("%Y/%m/%d %H:%M")
+  .comments__text
+    - if comment.comment.present?
+      %p.comment__text--content
+        =comment.comment
+    = image_tag comment.image.url, class: "comment__tetx--image" if comment.image.present?
