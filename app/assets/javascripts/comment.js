@@ -36,10 +36,12 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.comment').append(html);
+      $(".comment").animate({scrollTop: $(".comment")[0].scrollHeight});
       $('#comment_comment').val('');
     })
     .fail(function(data){
-      alert("エラーが発生したためメッセージは送信できませんでした")
+      alert("コメント送信に失敗しました");
     })
+
   })
 });
