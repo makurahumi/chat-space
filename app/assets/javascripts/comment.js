@@ -37,6 +37,7 @@ $(function(){
       var html = buildHTML(data);
       $('.comment').append(html);
       $(".comment").animate({scrollTop: $(".comment")[0].scrollHeight});
+      $("input").attr('disabled',false);
       $('#comment_comment').val('');
     })
     .fail(function(data){
