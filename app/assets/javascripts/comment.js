@@ -43,6 +43,5 @@ $(function(){
     .fail(function(data){
       alert("コメント送信に失敗しました");
     })
-
   })
 });
