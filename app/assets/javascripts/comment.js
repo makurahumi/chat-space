@@ -38,7 +38,7 @@ $(function(){
       $('.comment').append(html);
       $(".comment").animate({scrollTop: $(".comment")[0].scrollHeight});
       $("input").attr('disabled',false);
-      $('#comment_comment').val('');
+      $('form')[0].reset();
     })
     .fail(function(data){
       alert("コメント送信に失敗しました");
