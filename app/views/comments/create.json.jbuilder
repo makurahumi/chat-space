@@ -1,3 +1,4 @@
+json.id          @comment.id
 json.comment     @comment.comment
 json.image       @comment.image.url
 json.user_name   @comment.user.name
