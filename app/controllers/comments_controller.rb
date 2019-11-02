@@ -9,7 +9,10 @@ class CommentsController < ApplicationController
   def create
     @comment = @group.comments.new(comment_params)
     if @comment.save
-      redirect_to group_comments_path(@group), notice: "コメントが送信されました"
+      respond_to do |format|
+        format.html {redirect_to group_comments_path(@group), notice: "コメントが送信されました"}
+        format.json
+      end
     else
       @comments = @group.comments.includes(:user)
       flash.now[:alert] = "コメントを入力してください"

@@ -1,11 +1,11 @@
-.comments-space
+.comments-space{ "data-comment_id": "#{comment.id}"}
   .comments-space__detail
-    .comments-space__detail--menber-name
+    %p.comments-space__detail--menber-name
       =comment.user.name
-    .comments-space__detail--date
+    %p.comments-space__detail--date
       =comment.created_at.strftime("%Y/%m/%d %H:%M")
   .comments__text
     - if comment.comment.present?
       %p.comment__text--content
         =comment.comment
-    = image_tag comment.image.url, class: "comment__tetx--image" if comment.image.present?
+    = image_tag comment.image.url, class: "comment__text--image" if comment.image.present?
