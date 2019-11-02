@@ -1,4 +1,24 @@
 $(function(){
+  function buildHTML(comment) {
+    var text = comment.comment ? `${comment.comment}` : "";
+    var img = comment.image ? `<img class=comment__text--image src=${comment.image}>` : "";
+    var html = `<div class="comments-space__detail">
+                  <p class="comments-space__detail--menber-name">
+                    ${comment.user_name}
+                  </p>
+                  <p class="comments-space__detail--date">
+                    ${comment.time}
+                  </p>
+                </div>
+                <div class="comments__text">
+                  <p class="comments__text--content">
+                    ${text}
+                  </p>
+                    ${img}
+                </div>`
+    return html;
+  }
+
   $('#new_comment').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -11,5 +31,13 @@ $(function(){
       processData: false,
       contentType: false
     })
+    .done(function(data){
+      var html = buildHTML(data);
+      $('.comments').append(html)
+      $('#comment_comment').val('');
+    })
+    .fail(function(data){
+      alert("エラーが発生したためメッセージは送信できませんでした")
+    })
   })
-})
+});
