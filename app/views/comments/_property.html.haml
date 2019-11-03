@@ -3,7 +3,7 @@
     %p.property__box__users-name
       = current_user.name
     %ul.property__box__menu
-      %li.property__box__menu--create-groups
+      %li.property__box__menu--create-groups{"data-turbolinks": "false"}
         =link_to new_group_path, class: "property__btn--create-groups" do
           =fa_icon 'edit'
       %li.property__box__menu--edit-users
