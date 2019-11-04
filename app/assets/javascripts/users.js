@@ -21,6 +21,12 @@ $(function() {
     search_list.append(html);
   }
 
+  function addDeleteUser(name, id){
+    let html = `
+              <div class="chat-group-user">
+                <input name="group[user_ids][]" type="hidden value="#{user.id}">`
+  }
+
   $("#user-search-field").on("keyup",function() {
     let input = $("#user-search-field").val();
     $.ajax({
@@ -45,4 +51,8 @@ $(function() {
       alert("通信エラーです。ユーザーが表示できません");
     });
   });
+});
+
+$(document).on('click', ".chat-group-user__btn--add", function(){
+
 });
