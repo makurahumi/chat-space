@@ -48,6 +48,9 @@ $(function(){
   let reloadComments = function() {
     let last_comment_id = $('.comments-space:last').data("comment_id");
     let group_id = $(".main-comment").data("group_id");
+
+      if (window.location.pathname.match(/\/groups\/\d+\/comments/)){
+
     $.ajax({
       url: `/groups/${group_id}/api/comments`,
       type: "get",
@@ -65,11 +68,8 @@ $(function(){
     })
     .fail(function(){
       alert("更新に失敗しました");
-    });
- };
-  if ($('.main-comment').length) {
-    autoReload = setInterval(reloadComments, 5000);
-  } else {
-    clearInterval(autoReload);
-  }
+    })
+  };
+ }
+ setInterval(reloadComments, 5000);
 });
