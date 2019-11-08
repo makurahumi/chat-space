@@ -5,6 +5,6 @@
   
   .main-menu
     =render partial: "comments/group-home"
-    .comment
+    .main-comment{ "data-group_id": "#{@group.id}"}
       =render @comments
     =render partial: "comments/send"
