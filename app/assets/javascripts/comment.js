@@ -21,55 +21,59 @@ $(function(){
     return html;
   }
 
-  $('#new_comment').on('submit', function(e){
-    e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action');
-    $.ajax({
-      url: url,
-      type: 'POST',
-      data: formData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    })
-    .done(function(data){
-      var html = buildHTML(data);
-      $('.main-comment').append(html);
-      $('.main-comment').animate({scrollTop: $('.main-comment')[0].scrollHeight});
-      $("input").attr('disabled',false);
-      $('form')[0].reset();
-    })
-    .fail(function(data){
-      alert("コメント送信に失敗しました");
-    })
-  });
+  $(document).on('turbolinks:load', function(){
+    $('#new_comment').on('submit', function(e){
+      e.preventDefault();
+      var formData = new FormData(this);
+      var url = $(this).attr('action');
 
-  let reloadComments = function() {
-    let last_comment_id = $('.comments-space:last').data("comment_id");
-    let group_id = $(".main-comment").data("group_id");
-    $.ajax({
-      url: `/groups/${group_id}/api/comments`,
-      type: "get",
-      dataType: "json",
-      data: {last_id: last_comment_id}
-    })
-
-    .done(function(comments){
-      let insertHTML = '';
-        comments.forEach(function(comment){
-        insertHTML = buildHTML(comment);
-        $('.main-comment').append(insertHTML);
-        $('.main-comment').animate({scrollTop: $('.main-comment')[0].scrollHeight});
+      $.ajax({
+        url: url,
+        type: 'POST',
+        data: formData,
+        dataType: 'json',
+        processData: false,
+        contentType: false
       })
-    })
-    .fail(function(){
-      alert("更新に失敗しました");
+
+      .done(function(data){
+        var html = buildHTML(data);
+        $('.main-comment').append(html);
+        $('.main-comment').animate({scrollTop: $('.main-comment')[0].scrollHeight});
+        $("input").attr('disabled',false);
+        $('form')[0].reset();
+      })
+      .fail(function(data){
+        alert("コメント送信に失敗しました");
+      })
     });
- };
-  if ($('.main-comment').length) {
-    autoReload = setInterval(reloadComments, 5000);
-  } else {
-    clearInterval(autoReload);
-  }
+
+    let reloadComments = function() {
+      let last_comment_id = $('.comments-space:last').data("comment_id");
+      let group_id = $(".main-comment").data("group_id");
+
+        if (window.location.href.match(/\/groups\/\d+\/comments/)){
+
+      $.ajax({
+        url: `/groups/${group_id}/api/comments`,
+        type: "get",
+        dataType: "json",
+        data: {last_id: last_comment_id}
+      })
+
+      .done(function(comments){
+        let insertHTML = '';
+          comments.forEach(function(comment){
+          insertHTML = buildHTML(comment);
+          $('.main-comment').append(insertHTML);
+          $('.main-comment').animate({scrollTop: $('.main-comment')[0].scrollHeight});
+        })
+      })
+      .fail(function(){
+        alert("更新に失敗しました");
+      })
+    };
+   }
+   setInterval(reloadComments, 5000);
+  });
 });
