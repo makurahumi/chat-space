@@ -34,10 +34,15 @@ $(function() {
 
   $("#user-search-field").on("keyup",function() {
     let input = $("#user-search-field").val();
+    let addids = [];
+      $('.chat-member-name').each(function(i,data){
+        addids.push(data.value)
+      });
+
     $.ajax({
       type: "GET",
       url: "/users",
-      data: { keyword: input },
+      data: { keyword: input, omit_id: addids },
       dataType: 'json'
     })
     .done(function(users) {
