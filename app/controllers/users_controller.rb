@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
 
   def index
+    @omit_id = params[:omit_user] || current_user.id
+      if @omit_id.present?
+        @omit_id << current_user.id
+      end
+
     return nil if params[:keyword] == ""
-    @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: current_user.id).limit(10)
+    @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: @omit_id).limit(10)
     respond_to do |format|
       format.html
       format.json
