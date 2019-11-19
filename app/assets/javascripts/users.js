@@ -24,7 +24,7 @@ $(function() {
   function addDeleteUser(name, id) {
     let html = `
               <div class="chat-group-user clearfix">
-              <input name="group[user_ids][]" type="hidden" value="${id}" />
+                <input class="chat-member-name" name="group[user_ids][]" type="hidden" value="${id}" />
                 <p class="chat-group-user__name">${name}</p>
                 <div class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn" data-user-id="${id}" data-user-name="${name}">削除</div>
               </div>
@@ -34,10 +34,15 @@ $(function() {
 
   $("#user-search-field").on("keyup",function() {
     let input = $("#user-search-field").val();
+    let addids = [];
+      $('.chat-member-name').each(function(i,data){
+        addids.push(data.value)
+      });
+
     $.ajax({
       type: "GET",
       url: "/users",
-      data: { keyword: input },
+      data: { keyword: input, omit_user: addids },
       dataType: 'json'
     })
     .done(function(users) {
